@@ -21,3 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
   showPage("home");
 });
+
+const darkModeToggle = document.getEleemtzbyId("darkModeToggle");
+
+darkModeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+});

@@ -1,30 +1,60 @@
 /* Import Poppins font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+; root {
+  --primary-color: #ffd7e1; /* Pastel pink */
+  --secondary-color: #e5b7ff; /* Pastel lavender */
+  --text-color: #272525; /* light black text */
+  --font-family: 'Poppins', sans-serif;
+  --spacing: 16px;
+}
+
+
 /* General body styling */
 body {
   background-color: #f9f9f9; 
-  font-family: 'Poppins', sans-serif; 
-  color: #333;
+  font-family: var(--font-family)
+  color: var(--background-color);
   margin: 0;
   padding: 0;
-  text-align: center;
+
 }
 
 nav {
-  background-color: #fee5ea; /* Pastel pink background */
-  padding: 10px 20px;
-  text-align: center;
-  border-bottom: 2px solid #e0a3b3;
+  background-color: var(--primary-color)
+  padding: var(--text-color);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
 }
 
 nav ul li {
-  margin: 0 15px;
+  margin: 0 var(--spacing);
 }
 
-nav ul li a: hover {
-  color: #cd2a50;
+nav ul li a {
+  color: var(--background-color);
+  text-decoration: none;
+  font-weight: bold;
 }
+
+.page{
+  padding: var(--spacing);
+}
+
+.dark-mode{
+  --primary-color: #1a1a1a;
+  --secondary-color: #f1c40f;
+  --text-color :#f1f1f1;
+  --background-color: #121212;
+}
+
+
+
 
 /* Header styling */
 header {
@@ -49,10 +79,6 @@ main {
   padding: 30px;
 }
 
-.page{
-  display: none;
-  padding: 20px;
-}
 
 .page.active {
   display: block;
