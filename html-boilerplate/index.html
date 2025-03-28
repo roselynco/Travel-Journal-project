@@ -2,37 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <title>My First Webpage</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WANDERLY - Your Travel Journal</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/script.js" defer></script>
   </head>
 
   <body>
-    <h1>Hello World!</h1>
-
     <header>
-      <nav>
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#"> Public Note</a></li>
-            <li><a href="#">Private Note</a></li>
-  <button id="darkModeToggle">Toggle Dark Mode</button> // Dark Mode Button
+      <nav class="main-nav">
+        <div class="logo">
+          <h1>WANDERLY</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="private-notes.html">Private Notes</a></li>
+          <li><a href="public-notes.html">Public Notes</a></li>
+          <li><a href="about.html">About</a></li>
         </ul>
       </nav>
     </header>
 
-    <main>
+    <main class="container">
+      <section class="hero">
         <h1>We are more alike than we think!</h1>
-        <p> Explore, Enjoy, Connect, Breath </p>
+        <p class="tagline">Explore, Enjoy, Connect, Breathe</p>
+      </section>
     </main>
 
-    <footer>
-      <p>&copy; My website 2025. All Rights Reserved to Roselyn Cuevas Osoria</p>
-      <p> Follow us on social media:</p>
-        <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">TikTok</a></li>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Snapchat</a></li>
-    </footer>
+    <button class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
   </body>
 </html>

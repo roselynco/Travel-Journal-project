@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Notes - Wanderlyn</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="../js/script.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <nav class="main-nav">
+        <div class="logo">
+          <h1>Wanderlyn</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="private-notes.html" class="active">Private Notes</a></li>
+          <li><a href="public-notes.html">Public Notes</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="profile.html" class="profile-link">Profile</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Your Private Travel Memories</h1>
+        <p class="tagline">A safe space for your personal reflections</p>
+      </section>
+
+      <section class="private-entries">
+        <h2>Your Private Entries</h2>
+        <div class="entries-grid" id="privateEntries">
+          <!-- Private entries will be loaded here -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <p>&copy; 2025 Wanderlyn. All Rights Reserved to Roselyn Cuevas Osoria</p>
+        <div class="social-links">
+          <p>Follow us on social media:</p>
+          <ul>
+            <li><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></li>
+            <li><a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a></li>
+            <li><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#" aria-label="Snapchat"><i class="fab fa-snapchat"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Additional JavaScript for private notes page
+      document.addEventListener('DOMContentLoaded', () => {
+        const privateEntriesGrid = document.getElementById('privateEntries');
+        
+        // Get entries from localStorage
+        const entries = JSON.parse(localStorage.getItem('journalEntries')) || [];
+        
+        // Filter and display only private entries
+        const privateEntries = entries.filter(entry => entry.isPrivate);
+        
+        if (privateEntriesGrid) {
+          if (privateEntries.length === 0) {
+            privateEntriesGrid.innerHTML = `
+              <div class="no-entries">
+                <p>You haven't created any private entries yet.</p>
+                <a href="index.html" class="submit-btn">Create Your First Entry</a>
+              </div>
+            `;
+          } else {
+            privateEntriesGrid.innerHTML = privateEntries.map(entry => `
+              <article class="entry-card">
+                ${entry.images.length > 0 ? `
+                  <img src="${entry.images[0]}" alt="Travel memory from ${entry.location}" class="entry-image">
+                ` : ''}
+                <div class="entry-content">
+                  <p class="entry-location">📍 ${entry.location}</p>
+                  <p>${entry.content}</p>
+                  <small>${new Date(entry.date).toLocaleDateString()}</small>
+                </div>
+              </article>
+            `).join('');
+          }
+        }
+      });
+    </script>
+  </body>
+</html> 
