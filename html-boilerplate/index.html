@@ -14,12 +14,6 @@
         <div class="logo">
           <h1>WANDERLY</h1>
         </div>
-        <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="private-notes.html">Private Notes</a></li>
-          <li><a href="public-notes.html">Public Notes</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
       </nav>
     </header>
 
@@ -27,6 +21,56 @@
       <section class="hero">
         <h1>We are more alike than we think!</h1>
         <p class="tagline">Explore, Enjoy, Connect, Breathe</p>
+      </section>
+
+      <section class="create-entry">
+        <div class="entry-form">
+          <h2>Share Your Journey</h2>
+          <form id="journalEntry">
+            <div class="form-group">
+              <textarea 
+                id="entryContent" 
+                placeholder="Write your advice, quote, or memory here..."
+                rows="4"
+                required></textarea>
+            </div>
+            
+            <div class="form-group">
+              <input 
+                type="text" 
+                id="location" 
+                placeholder="📍 Location"
+                required>
+            </div>
+
+            <div class="form-group">
+              <label for="imageUpload" class="upload-label">
+                📸 Add Photos
+                <input 
+                  type="file" 
+                  id="imageUpload" 
+                  accept="image/*" 
+                  multiple>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label class="privacy-toggle">
+                <input type="checkbox" id="privateEntry">
+                Make this entry private
+              </label>
+            </div>
+
+            <button type="submit" class="submit-btn">Save Entry</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="recent-entries">
+        <h2>Recent Public Entries</h2>
+        <div class="entries-grid" id="publicEntries">
+          <!-- Entries will be dynamically loaded here -->
+        </div>
       </section>
     </main>
 
