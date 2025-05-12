@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Journal - WANDERLY</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <div class="logo">
+          <h1>WANDERLY</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="private-journal.html" class="active" aria-current="page">Private Journal</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><button class="auth-btn" id="signInBtn" aria-label="Sign in to your account">Sign In</button></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="recent-entries" aria-label="Private journal entries">
+        <h2>Private Journal Entries</h2>
+        <div class="entries-grid" id="privateEntries" role="list" aria-label="List of private entries">
+          <!-- Private entries will be dynamically loaded here -->
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="footer-content">
+        <p>&copy; 2024 WANDERLY. All rights reserved.</p>
+        <div class="social-links">
+          <ul>
+            <li><a href="#" aria-label="Follow us on Instagram">Instagram</a></li>
+            <li><a href="#" aria-label="Follow us on Twitter">Twitter</a></li>
+            <li><a href="#" aria-label="Follow us on Facebook">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <button class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
+  </body>
+</html> 

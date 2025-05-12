@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WANDERLY - Your Travel Journal</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+  </head>
+
+  <body>
+    <header>
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <div class="logo">
+          <h1>WANDERLY</h1>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#" class="active" aria-current="page">Home</a></li>
+          <li><a href="private-journal.html">Private Journal</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><button class="auth-btn" id="signInBtn" aria-label="Sign in to your account">Sign In</button></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Authentication -->
+    <div class="auth-modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authModalTitle">
+      <div class="auth-container">
+        <button class="close-modal" id="closeModal" aria-label="Close authentication modal">&times;</button>
+        
+        <!-- Sign In Form -->
+        <form id="signInForm" class="auth-form" aria-label="Sign in form">
+          <h2 id="authModalTitle">Welcome Back!</h2>
+          <div class="form-group">
+            <label for="signInEmail" class="visually-hidden">Email</label>
+            <input type="email" id="signInEmail" placeholder="Email" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="signInPassword" class="visually-hidden">Password</label>
+            <input type="password" id="signInPassword" placeholder="Password" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label class="remember-me">
+              <input type="checkbox" id="rememberMe">
+              Remember me
+            </label>
+          </div>
+          <button type="submit" class="submit-btn">Sign In</button>
+          <p class="auth-switch">
+            Don't have an account? <a href="#" id="switchToSignUp">Sign Up</a>
+          </p>
+        </form>
+
+        <!-- Sign Up Form -->
+        <form id="signUpForm" class="auth-form hidden" aria-label="Sign up form">
+          <h2>Create Account</h2>
+          <div class="form-group">
+            <label for="signUpName" class="visually-hidden">Full Name</label>
+            <input type="text" id="signUpName" placeholder="Full Name" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="signUpEmail" class="visually-hidden">Email</label>
+            <input type="email" id="signUpEmail" placeholder="Email" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label for="signUpPassword" class="visually-hidden">Password</label>
+            <input type="password" id="signUpPassword" placeholder="Password" required aria-required="true">
+          </div>
+          <div class="form-group">
+            <label class="terms">
+              <input type="checkbox" id="acceptTerms" required aria-required="true">
+              I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+            </label>
+          </div>
+          <button type="submit" class="submit-btn">Create Account</button>
+          <p class="auth-switch">
+            Already have an account? <a href="#" id="switchToSignIn">Sign In</a>
+          </p>
+        </form>
+        // notification container
+        <div class="notification-container" id="notificationContainer"></div>
+      </div>
+    </div>
+
+    <main class="container">
+      <section class="hero" aria-label="Welcome section">
+        <h1>We are more alike than we think</h1>
+        <p class="tagline">Explore, Enjoy, Connect.</p>
+      </section>
+
+      <section class="create-entry" aria-label="Create new journal entry">
+        <div class="entry-form">
+          <h2>Share Your Journey</h2>
+          <form id="journalEntry" aria-label="Journal entry form">
+            <div class="form-group">
+              <label for="entryContent" class="visually-hidden">Journal Entry Content</label>
+              <textarea 
+                id="entryContent" 
+                placeholder="Write your advice, quote, or memory here..."
+                rows="4"
+                required
+                aria-required="true"></textarea>
+            </div>
+            
+            <div class="form-group">
+              <label for="location" class="visually-hidden">Location</label>
+              <input 
+                type="text" 
+                id="location" 
+                placeholder="📍 Location"
+                required
+                aria-required="true">
+            </div>
+
+            <div class="form-group">
+              <label for="imageUpload" class="upload-label">
+                📸 Add Photos
+                <input 
+                  type="file" 
+                  id="imageUpload" 
+                  accept="image/*" 
+                  multiple
+                  aria-label="Upload photos">
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label class="privacy-toggle">
+                <input type="checkbox" id="privateEntry" aria-label="Make this entry private">
+                Make this entry private
+              </label>
+            </div>
+
+            <button type="submit" class="submit-btn">Save Entry</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="recent-entries" aria-label="Recent public entries">
+        <h2>Recent Public Entries</h2>
+        <div class="entries-grid" id="publicEntries" role="list" aria-label="List of public entries">
+          <!-- Entries will be dynamically loaded here -->
+        </div>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <div class="footer-content">
+        <p>&copy; 2024 WANDERLY. All rights reserved.</p>
+        <div class="social-links">
+          <ul>
+            <li><a href="#" aria-label="Follow us on Instagram">Instagram</a></li>
+            <li><a href="#" aria-label="Follow us on Twitter">Twitter</a></li>
+            <li><a href="#" aria-label="Follow us on Facebook">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <button class="theme-toggle" aria-label="Toggle dark mode">☀️</button>
+  </body>
+</html> 
